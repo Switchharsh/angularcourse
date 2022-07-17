@@ -1,0 +1,15 @@
+import { ValueConverter } from "@angular/compiler/src/render3/view/template";
+import { Pipe, PipeTransform } from "@angular/core";
+
+@Pipe({
+    name: 'shorten'
+})
+export class ShortenPipe implements PipeTransform {
+transform(value: any, limit: number) {
+    if (value.length>limit){
+    return value.substr(0,10) + ' ...';
+}
+return value;
+}
+
+} 
